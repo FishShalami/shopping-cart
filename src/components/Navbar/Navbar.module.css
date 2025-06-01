@@ -6,3 +6,8 @@
   font-size: 0.75rem;
   margin-left: 4px;
 }
+
+.active {
+  font-weight: 700;
+  color: dodgerblue;
+}
