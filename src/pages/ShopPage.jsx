@@ -1,6 +1,10 @@
 import React from "react";
+import { useEffect } from "react";
 
-export default function ShopPage() {
+export default function ShopPage({ addToCart }) {
+  //   useEffect(() => {
+  //     addToCart({ id: 42, title: "Test item", price: 10 }, 2);
+  //   }, []);
   return (
     <div className="shop-page">
       <h1>Shop</h1>
