@@ -24,7 +24,7 @@ export default function ShopPage({ addToCart }) {
       <h1>Shop</h1>
       <div className={styles.products}>
         {products.map((p) => (
-          <ProductCard key={p.id} product={p} />
+          <ProductCard key={p.id} product={p} addToCart={addToCart} />
         ))}
       </div>
       {/* <ul>
