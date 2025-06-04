@@ -20,9 +20,15 @@ export default function App() {
     });
   };
 
-  // pass down two things wherever needed:
-  // 1. cartItems.length (for the badge)
-  // 2. addToCart function
+  const updateQty = (id, newQty) => {
+    setCartItems((prev) =>
+      prev.map((i) => (i.id === id ? { ...i, qty: newQty } : i))
+    );
+  };
+
+  const removeItem = (id) => {
+    setCartItems((prev) => prev.filter((i) => i.id !== id));
+  };
 
   return (
     <BrowserRouter>
@@ -30,7 +36,16 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/shop" element={<ShopPage addToCart={addToCart} />} />
-        <Route path="/cart" element={<CartPage cartItems={cartItems} />} />
+        <Route
+          path="/cart"
+          element={
+            <CartPage
+              cartItems={cartItems}
+              updateQty={updateQty}
+              removeItem={removeItem}
+            />
+          }
+        />
       </Routes>
     </BrowserRouter>
   );
