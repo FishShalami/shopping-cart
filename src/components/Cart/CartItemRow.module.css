@@ -1,0 +1,13 @@
+.itemRow {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  align-items: center;
+  border: 2px red solid;
+  gap: 30px;
+}
+
+.itemRow img {
+  width: 100%;
+  height: 75px;
+  object-fit: contain;
+}
